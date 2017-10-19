@@ -1,0 +1,65 @@
+#############################################################
+# Title: Python CSV Module Documentation                    #
+# Description: Documentation for the CSV Module             #
+#              python class                                 #
+# Version:                                                  #
+#   * Document Version 1.0 10/19/2017 RC                    #
+#                                                           #
+# Author: Richard Cintorino (c) Richard Cintorino 2017      #
+#############################################################
+
+pyCSVTag Class
+
+    Usage: 
+
+    from CSV import pyCSVTag
+    self.CSVTag = pyCSVTag("Data in CSV Format", "Key to extract", Debug=True, Encryption=False)
+
+    self.CSVTag.Get_key("key") #trys to pull value for "key" if it is in the CSV Data
+    
+    self.CSVTag.Update_key("key","Value") #trys to update value for "key" if it is in the CSV Data
+    
+    self.CSVTag.Remove_key("key") #trys to remove "key" if it is in the CSV Data
+    
+    self.CSVTag.Set_key("key","Value") #trys to set value for "key" if it isn't in the CSV Data
+    
+    RawData = self.CSVTag.Data # Gets raw CSV Data
+    
+    self.CSVTag.Data = "Some raw CSV Data" # Sets raw data,
+
+    __init__ Variables:
+        sCSVData:
+            CSV Data to be handled
+        sKey:
+            Key to extract from CSV Data (could be main key or sub keys)
+        Debug (True | False):
+            True: Display all debug information to stdout
+            False: Display only critical Log based errors to stdout
+            
+        Encryption (True | False):
+            True: Base64 encrypt data
+            False: no encryption
+            
+    Get_Key Variables: Gets a key from the CSV Data
+        sKey:
+            string of key name to retrieve value for in CSV Data
+    
+    Set_Key Variables: Sets a Key in the CSV Data if it doesn't exist
+        sKey:
+            string of key name to set value for from CSV Data
+        sValue:
+            string of value to update key with
+    
+    Update_Key Variables: Updates a Key in the CSV Data if it exist
+        sKey:
+            string of key name to set value for from CSV Data
+        sValue:
+            string of value to update key with
+        
+
+    Remove_Key Variables: Deletes a key from the CSV Data
+        sKey:
+            string of key name to delete from CSV Data
+    
+    Data: Get or sets raw CSV Data as a string
+            
